@@ -119,7 +119,7 @@ export default {
     },
     MenuList() {
       MenuList().then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         this.menu = res.data.categoryList;
       });
     },

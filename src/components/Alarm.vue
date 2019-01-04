@@ -323,7 +323,7 @@ export default {
   /* background: red; */
 }
 .table_title {
-  width: 100%;
+  /* width: 100%; */
   height: 50px;
   line-height: 50px;
   font-size: 16px;

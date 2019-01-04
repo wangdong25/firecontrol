@@ -28,11 +28,8 @@ export default {
   methods: {
     handerClick(row, event, column) {
       console.log(row.id, event, column);
-      const store = new Vuex.Store({
-        state: {
-          id: row.id
-        }
-      });
+      this.$store.dispatch('setAlarmid',row.id);
+      this.$store.dispatch('setAlarmtype',row.type)
     }
   }
 };

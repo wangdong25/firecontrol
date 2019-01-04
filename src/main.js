@@ -18,7 +18,9 @@ import header from '@/components/common/Header'
 import Footer from '@/components/common/Footer'
 import Alarm from '@/components/Alarm'
 import AlarmDetail from '@/components/AlarmDetail'
+import UnitalarmDetail from '@/components/UnitalarmDetail'
 import Table from '@/components/common/Table'
+import store from './store/store'
 var toastrConfigs = {
     position: 'top right',
     timeOut: 2000,
@@ -30,6 +32,7 @@ Vue.component("footer-view",Footer);
 Vue.component("alarm-view",Alarm);
 Vue.component("AlarmDetail-view",AlarmDetail);
 Vue.component("table-view",Table);
+Vue.component("UnitalarmDetail-view",UnitalarmDetail);
 Vue.use(Vuex);
 Vue.use(ElementUI);
 Vue.use(BaiduMap, {
@@ -38,6 +41,8 @@ Vue.use(BaiduMap, {
 })
 
 Vue.config.productionTip = false
+
+
 
 /*
 router.beforeEach((to, from, next) => {
@@ -54,12 +59,36 @@ router.beforeEach((to, from, next) => {
   };
 });
 
- */
+//  */
+// // http request 请求拦截器，有token值则配置上token值
+// axios.interceptors.request.use(
+//   config => {
+//       debugger;
+//       return config;
+//   },
+//   err => {
+//       return Promise.reject(err);
+//   });
+
+
+// axios.interceptors.response.use(
+//   response => {
+    
+//       return response;
+//   },
+//   error => {
+//       if (error.response) {
+
+//       }
+//       return Promise.reject(error.response.data) 
+//   });
+
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
